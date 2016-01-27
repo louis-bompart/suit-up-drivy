@@ -29,7 +29,7 @@ function compute() {
   var actors = DRIVY.payActors(car, begin, end, distance, option);
 
   render(actors);
-  document.querySelector('#modelDisplay').innerHTML = DRIVY.model;
+  document.querySelector('#modelDisplay').innerHTML = car.model;
   return showDialog();
 }
 function clearFields() {
