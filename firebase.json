@@ -1,0 +1,9 @@
+{
+  "firebase": "suit-up-drivy",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
