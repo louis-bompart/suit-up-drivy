@@ -1,0 +1,70 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+
+<link rel="import" href="../../bower_components/neon-animation/animations/fade-out-animation.html">
+<link rel="import" href="../../bower_components/neon-animation/animations/scale-up-animation.html">
+
+
+<dom-module id="drivy-element">
+<style>
+  paper-icon-button.clear {
+    color: var(--paper-red-500);
+    --paper-icon-button-ink-color: var(--paper-red-900);
+  }
+  paper-icon-button.ok {
+    color: var(--paper-green-500)
+    --paper-icon-button-ink-color: var(--paper-green-900);
+  }
+</style>
+  <template>
+      <paper-card heading= "Welcome to Drivy">
+        <div class="card-content">
+          <paper-input class="field" id="model" input="text" label="Car model"></paper-input>
+          <paper-input class="field" id="kmPrice" type="number" label="Kilometric price" auto-validate allowed-pattern="[0-9]">
+            <div suffix>€/km</div>
+          </paper-input>
+          <paper-input class="field" id="dayPrice" type="number" label="Daily Price" auto-validate allowed-pattern="[0-9]">
+            <div suffix>€/d</div>
+          </paper-input>
+          <paper-input class="field" id="begin" type="date" label="Rental begin date">
+          </paper-input>
+          <paper-input class="field" id="end" type="date" label="Rental end date"/></paper-input>
+          <paper-input class="field" id="distance" type="number" label="Distance in km" auto-validate allowed-pattern="[0-9]"/>
+            <div suffix>km</div>
+          </paper-input>
+          <paper-checkbox class="field" id="option">Careless-driver option</paper-checkbox>
+        </div>
+        <div class="card-actions"/>
+          <div class="horizontal around-justified layout">
+            <paper-icon-button icon="clear" onclick="clearFields()" class="clear"></paper-icon-button>
+              <paper-icon-button id="compute" icon="done" onclick="compute()" class="ok"></paper-icon-button>
+          </div>
+      </paper-card>
+      <paper-dialog id="result" entry-animation="scale-up-animation" exit-animation="fade-out-animation" onclick="showDialog()" >
+
+            <h2 id="paper-dialog-header-806">And voilà !</h2>
+            <p><b>Car's model :</b><span id="modelDisplay"></span></p>
+            <div id="actors"></div>
+
+        </paper-dialog>
+  </template>
+
+  <script>
+    //clearFields();//Just to avoid jshint-stupidness.
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'drivy-element',
+      });
+    })();
+  </script>
+  <script src="drivy.js"></script>
+  <script src="index.js"></script>
+
+  </script>
+</dom-module>
