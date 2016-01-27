@@ -16,7 +16,7 @@
 
 ##Final Product
 
-Source in the repo, build app available at : https://suit-up-drivy.firebaseapp.com/suit-up-drivy/
+Source in the repo, build app available at : https://suit-up-drivy.firebaseapp.com
 
 ## Intro
 
